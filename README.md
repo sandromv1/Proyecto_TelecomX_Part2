@@ -34,7 +34,7 @@ Clonar este repositorio o descargar el archivo TelecomX_Part2.ipynb.
 
 (entre las librerías principales se incluyen: pandas, numpy, matplotlib, seaborn, scikit-learn, imblearn).
 
-Abrir el notebook en VSCode y ejecutar las celdas en orden.
+Abrir el notebook en VSCode o Google Colab y ejecutar las celdas en orden.
 
 Opcional: actualizar la ruta del dataset si fuese necesario.
 
