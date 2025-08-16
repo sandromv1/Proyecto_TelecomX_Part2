@@ -49,13 +49,13 @@ Distribución de cancelaciones (Churn): confirmó un desbalance de clases, con m
 
 Matriz de confusión:
 
-Árbol de decisión: alto desempeño en la clase negativa, bajo en la positiva.
+- Árbol de decisión: alto desempeño en la clase negativa, bajo en la positiva.
 
-KNN: mejor recall para la clase positiva, aunque con menor exactitud global.
+- KNN: mejor recall para la clase positiva, aunque con menor exactitud global.
 
 Importancia de variables:
 
-Meses_Contrato, tipo de plan y cargos mensuales destacan como factores clave para explicar la cancelación.
+- Meses_Contrato, tipo de plan y cargos mensuales destacan como factores clave para explicar la cancelación.
 
 5. Instrucciones para ejecutar el cuaderno
 
