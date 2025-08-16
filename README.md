@@ -1,43 +1,68 @@
-📊 Proyecto Telecom X
-1. Propósito del Análisis
+📊 Proyecto Telecom X - Parte 2
+1. Propósito del análisis
 
-El objetivo de este proyecto es analizar el comportamiento de los clientes de Telecom X con el fin de predecir la cancelación del servicio (churn). Para ello, se aplicaron técnicas de procesamiento de datos, análisis exploratorio y modelado predictivo utilizando distintos algoritmos de machine learning. Finalmente, se seleccionó el modelo KNN con oversampling por su mejor capacidad para identificar a los clientes con mayor riesgo de cancelar, lo que aporta un valor estratégico para diseñar campañas de retención.
+El objetivo principal de este proyecto es predecir la cancelación de clientes (churn) en la empresa Telecom X, a partir de un conjunto de variables relevantes relacionadas con el contrato, el tipo de servicio y la facturación.
+El análisis busca identificar qué clientes presentan mayor probabilidad de cancelar, con el fin de proponer estrategias de retención y mejorar la gestión del negocio.
 
-2. Estructura del Proyecto
+2. Estructura del proyecto y organización de los archivos
 
-El proyecto está organizado en un notebook principal:
+El proyecto se compone de:
 
-Extracción y transformación de datos: limpieza, estandarización, encoding.
+TelecomX_Part2.ipynb: cuaderno principal con todo el flujo de trabajo.
+TelecomX_Data.json: arhivo en formato Json que tiene los datos que analizaremos, se puede descargar desde el siguiente link:
+https://github.com/alura-cursos/challenge2-data-science-LATAM/blob/main/TelecomX_Data.json
 
-Análisis exploratorio: estadísticas descriptivas, distribución de variables, correlaciones.
 
-Modelado predictivo: comparación de algoritmos (Decision Tree y KNN) con técnicas de balanceo de clases.
+3. Descripción del proceso de preparación de los datos
 
-Evaluación de modelos: métricas de desempeño (accuracy, precision, recall, F1-score), matrices de confusión e intervalos de confianza.
+Clasificación de variables:
 
-Importancia de variables: interpretación de factores relevantes para la predicción del churn.
+Categóricas: tipo de contrato, método de pago, servicio de internet, etc.
 
-Conclusiones: selección de KNN como modelo final.
+Numéricas: meses de contrato, cargos mensuales, cargos totales.
 
-3. Ejemplos de Gráficos e Insights
+Transformaciones aplicadas:
 
-🔹 Distribución de cancelaciones: mostró el desbalance de clases (más clientes que permanecen que los que cancelan).
-🔹 Matriz de confusión: evidenció que KNN, aunque con menor exactitud global, detecta mejor a los clientes que cancelan.
-🔹 Gráficos de importancia de variables: identificaron que Meses_Contrato, el tipo de plan y los pagos mensuales son factores clave en la predicción.
+Codificación de variables categóricas mediante OneHotEncoder.
 
-Ejemplo de insight:
-👉 Los clientes con contratos más cortos y pagos mensuales elevados tienen mayor probabilidad de cancelar.
+Normalización de variables numéricas usando Min-Max Scaling (fundamental para KNN).
 
-4. Instrucciones para Ejecutar el Notebook
+Balanceo de clases:
 
-Clonar este repositorio o descargar el archivo TelecomX_Part2.ipynb.
+Se aplicó SMOTE para oversampling de la clase minoritaria (clientes que cancelan).
 
-(entre las librerías principales se incluyen: pandas, numpy, matplotlib, seaborn, scikit-learn, imblearn).
+También se probó NearMiss (undersampling), aunque con resultados menos favorables.
 
-Abrir el notebook en VSCode o Google Colab y ejecutar las celdas en orden.
+Separación de datos:
 
-Opcional: actualizar la ruta del dataset si fuese necesario.
+Datos divididos en train y test, asegurando proporción balanceada de la variable objetivo.
 
-📌 Conclusión
+Justificación de decisiones:
 
-Este proyecto demuestra cómo aplicar técnicas de machine learning al sector de telecomunicaciones para reducir la tasa de cancelación de clientes. La documentación y estructura del análisis permiten replicar el flujo de trabajo y extenderlo con nuevos modelos o datasets en el futuro.
+La normalización se aplicó exclusivamente para KNN, ya que este modelo depende de distancias.
+
+El uso de oversampling se priorizó por mejorar el recall de la clase positiva.
+
+4. Ejemplos de gráficos e insights obtenidos
+
+Distribución de cancelaciones (Churn): confirmó un desbalance de clases, con más clientes que permanecen que los que cancelan.
+
+Matriz de confusión:
+
+Árbol de decisión: alto desempeño en la clase negativa, bajo en la positiva.
+
+KNN: mejor recall para la clase positiva, aunque con menor exactitud global.
+
+Importancia de variables:
+
+Meses_Contrato, tipo de plan y cargos mensuales destacan como factores clave para explicar la cancelación.
+
+5. Instrucciones para ejecutar el cuaderno
+
+- Clonar este repositorio o descargar los archivos.
+
+- Abrir el cuaderno TelecomX_Part2.ipynb en Google Colab o VSCode.
+
+✅ Conclusión
+
+Tras la comparación de modelos, se determinó que KNN con oversampling y normalización Min-Max es la mejor opción para predecir cancelaciones. Aunque no logra la mayor exactitud global, ofrece un mejor recall en la clase positiva, lo cual es crítico para identificar clientes en riesgo y diseñar estrategias de retención.
