@@ -17,31 +17,31 @@ https://github.com/alura-cursos/challenge2-data-science-LATAM/blob/main/TelecomX
 
 Clasificación de variables:
 
-Categóricas: tipo de contrato, método de pago, servicio de internet, etc.
+- Categóricas: tipo de contrato, método de pago, servicio de internet, etc.
 
-Numéricas: meses de contrato, cargos mensuales, cargos totales.
+- Numéricas: meses de contrato, cargos mensuales, cargos totales.
 
 Transformaciones aplicadas:
 
-Codificación de variables categóricas mediante OneHotEncoder.
+- Codificación de variables categóricas mediante OneHotEncoder.
 
-Normalización de variables numéricas usando Min-Max Scaling (fundamental para KNN).
+- Normalización de variables numéricas usando Min-Max Scaling (fundamental para KNN).
 
 Balanceo de clases:
 
-Se aplicó SMOTE para oversampling de la clase minoritaria (clientes que cancelan).
+- Se aplicó SMOTE para oversampling de la clase minoritaria (clientes que cancelan).
 
-También se probó NearMiss (undersampling), aunque con resultados menos favorables.
+- Se probó NearMiss (undersampling), aunque con resultados menos favorables.
 
 Separación de datos:
 
-Datos divididos en train y test, asegurando proporción balanceada de la variable objetivo.
+- Datos divididos en train y test, asegurando proporción balanceada de la variable objetivo.
 
 Justificación de decisiones:
 
-La normalización se aplicó exclusivamente para KNN, ya que este modelo depende de distancias.
+- La normalización se aplicó exclusivamente para KNN, ya que este modelo depende de distancias.
 
-El uso de oversampling se priorizó por mejorar el recall de la clase positiva.
+- El uso de oversampling se priorizó por mejorar el recall de la clase positiva.
 
 4. Ejemplos de gráficos e insights obtenidos
 
